@@ -10,10 +10,11 @@ import javax.imageio.ImageIO;
 public class Aula1 {
 	
 	// Atenção, alterar esses caminhos ao trocar a maquina rodando esse código.
-	public static String path = "/Users/andredossantos/Documents/monitoria_prog3D_2017_1/Aula1/img";
+	public static String path = "/Users/andredossantos/Documents/monitoria_prog3D_2017_1/img";
+	public static String resultPath = "/Users/andredossantos/Documents/monitoria_prog3D_2017_1/Aula1/result";
 	
 	public static void main(String[] args) throws IOException {
-		new Aula1().executar(7);
+		new Aula1().executar(1);
 	}
 	
 	/**
@@ -32,34 +33,34 @@ public class Aula1 {
 		switch(exercicio){
 		case 1:
 			BufferedImage newImg = new Exercicio1().bright(img, 1.5f);
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio1.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio1.png"));
 			break;
 		case 2:
 			newImg = new Exercicio2().grayscale(img, 0);
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio2_0.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio2_0.png"));
 			
 			newImg = new Exercicio2().grayscale(img, 1);
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio2_1.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio2_1.png"));
 			
 			newImg = new Exercicio2().grayscale(img, 2);
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio2_2.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio2_2.png"));
 			break;
 		case 3:
 			newImg = new Exercicio2().threshold(img, 300);
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio2_3.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio2_3.png"));
 			break;
 		case 4:
 			newImg = new Exercicio3().subtract(img2, img1);
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio3_1.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio3_1.png"));
 		case 5:
 			newImg = new Exercicio3().add(img1, img2);
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio3_2.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio3_2.png"));
 		case 6:
 			newImg = new Exercicio4().lerp(lerp1, lerp2, 0.25f);
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio4.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio4.png"));
 		case 7:
 			newImg = new Exercicio5().multiply(img, new float[] { 0.5f, 1, 0.5f});
-			ImageIO.write(newImg, "png", new File(path, "result/exercicio5.png"));
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio5.png"));
 		}
 	}
 
