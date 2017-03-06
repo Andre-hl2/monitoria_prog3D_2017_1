@@ -14,7 +14,7 @@ public class Aula1 {
 	public static String resultPath = "/Users/andredossantos/Documents/monitoria_prog3D_2017_1/Aula1/result";
 	
 	public static void main(String[] args) throws IOException {
-		new Aula1().executar(1);
+		new Aula1().executar(3);
 	}
 	
 	/**
@@ -23,6 +23,7 @@ public class Aula1 {
 	void executar(int exercicio) throws IOException
 	{
 		BufferedImage img = ImageIO.read(new File(path, "cor/turtle.jpg"));
+		BufferedImage imgPuppy = ImageIO.read(new File(path, "cor/puppy.png"));
 		
 		BufferedImage img1 = ImageIO.read(new File(path, "pb/errosB1.png"));
 		BufferedImage img2 = ImageIO.read(new File(path, "pb/errosB2.png"));
@@ -46,7 +47,7 @@ public class Aula1 {
 			ImageIO.write(newImg, "png", new File(resultPath, "exercicio2_2.png"));
 			break;
 		case 3:
-			newImg = new Exercicio2().threshold(img, 300);
+			newImg = new Exercicio2().threshold(img, 200);
 			ImageIO.write(newImg, "png", new File(resultPath, "exercicio2_3.png"));
 			break;
 		case 4:
@@ -61,6 +62,9 @@ public class Aula1 {
 		case 7:
 			newImg = new Exercicio5().multiply(img, new float[] { 0.5f, 1, 0.5f});
 			ImageIO.write(newImg, "png", new File(resultPath, "exercicio5.png"));
+		case 8:
+			newImg = new Atividade1().toPallete(imgPuppy);
+			ImageIO.write(newImg, "png", new File(resultPath, "atividade1.png"));
 		}
 	}
 
@@ -84,5 +88,12 @@ public class Aula1 {
 	
 	static int clamp(int value, int min, int max) {
 		return value > max ? max : value < min ? min : value;
+	}
+	
+	static float distanceBetweenColors(Color color1, Color color2) {
+		float a = color2.getRed() - color1.getRed();
+		float b = color2.getGreen() - color1.getGreen();
+		float c = color2.getBlue() - color1.getBlue();
+		return (float)Math.sqrt(a * a + b * b + c * c);
 	}
 }

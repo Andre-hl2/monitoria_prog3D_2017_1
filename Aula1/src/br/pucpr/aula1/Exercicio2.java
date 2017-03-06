@@ -57,7 +57,7 @@ public class Exercicio2 {
 		int g = color.getGreen();
 		int b = color.getBlue();
 		
-		if(r+g+b > value) {
+		if ((r + g + b)/3 > value) {
 			return new Color(255, 255, 255);
 		} else {
 			return new Color(0,0,0);
