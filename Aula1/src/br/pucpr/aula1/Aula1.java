@@ -14,7 +14,7 @@ public class Aula1 {
 	public static String resultPath = "/Users/andredossantos/Documents/monitoria_prog3D_2017_1/Aula1/result";
 	
 	public static void main(String[] args) throws IOException {
-		new Aula1().executar(3);
+		new Aula1().executar(8);
 	}
 	
 	/**
@@ -65,6 +65,9 @@ public class Aula1 {
 		case 8:
 			newImg = new Atividade1().toPallete(imgPuppy);
 			ImageIO.write(newImg, "png", new File(resultPath, "atividade1.png"));
+		case 9:
+			newImg = new Atividade1().toDithering(imgPuppy);
+			ImageIO.write(newImg, "png", new File(resultPath, "atividade1_d.png"));
 		}
 	}
 
