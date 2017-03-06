@@ -63,23 +63,6 @@ public class Atividade1 {
 		            Color neighbourColor = new Color(img.getRGB(x+1, y+1));
 		            img.setRGB(x+1, y+1, applyError(neighbourColor, error, 1.0f/16.0f).getRGB());
 		        }
-                
-//                if (x+1 < img.getWidth()) {
-//                    Color p = new Color(img.getRGB(x+1, y));
-//                    img.setRGB(x+1, y, errorColor(p, error, 7.0/16).getRGB());
-//                }
-//                if (x-1 >= 0 && y+1 < img.getHeight()) {
-//                    Color p = new Color(img.getRGB(x-1, y+1));
-//                    img.setRGB(x-1, y+1, errorColor(p, error, 3.0/16).getRGB());
-//                }
-//                if (y+1 < img.getHeight()) {
-//                    Color p = new Color(img.getRGB(x, y+1));
-//                    img.setRGB(x, y+1, errorColor(p, error, 5.0/16).getRGB());
-//                }
-//                if (x+1 < img.getWidth() && y+1 < img.getHeight()) {
-//                    Color p = new Color(img.getRGB(x+1, y+1));
-//                    img.setRGB(x+1, y+1, errorColor(p, error, 1.0/16).getRGB());
-//                }
             }
                  
         }
@@ -102,41 +85,6 @@ public class Atividade1 {
 		}
 		
 		return result;
-	}
-	
-	BufferedImage ApplyDithering(BufferedImage img, BufferedImage newImg) {
-		
-		for(int y = 0; y < newImg.getHeight(); y++) {
-			for(int x = 0; x < newImg.getWidth(); x++) {
-				Color oldColor = new Color(img.getRGB(x, y));
-				Color newColor = new Color(newImg.getRGB(x, y));
-				
-				int[] error = {
-						oldColor.getRed() - newColor.getRed(),
-						oldColor.getGreen() - newColor.getGreen(),
-						oldColor.getBlue() - newColor.getBlue()                              
-		        };
-				
-		        if (x+1 < img.getWidth()) {
-		            Color neighbourColor = new Color(img.getRGB(x+1, y));
-		            img.setRGB(x, y, applyError(neighbourColor , error, 7.0f/16.0f).getRGB());
-		        }
-		        if (x-1 >= 0 && y+1 < img.getHeight()) {
-		            Color neighbourColor = new Color(img.getRGB(x-1, y+1));
-		            img.setRGB(x-1, y+1, applyError(neighbourColor, error, 3.0f/16.0f).getRGB());
-		        }
-		        if (y+1 < img.getHeight()) {
-		            Color neighbourColor = new Color(img.getRGB(x, y+1));
-		            img.setRGB(x, y+1, applyError(neighbourColor, error, 5.0f/16.0f).getRGB());
-		        }
-		        if (x+1 < img.getWidth() && y+1 < img.getHeight()) {
-		            Color neighbourColor = new Color(img.getRGB(x+1, y+1));
-		            img.setRGB(x+1, y+1, applyError(neighbourColor, error, 1.0f/16.0f).getRGB());
-		        }
-			}
-		}
-		
-		return img;
 	}
 	
 	Color applyError(Color color, int[] error, float value) {

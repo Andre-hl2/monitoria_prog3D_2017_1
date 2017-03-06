@@ -65,9 +65,10 @@ public class Aula1 {
 		case 8:
 			newImg = new Atividade1().toPallete(imgPuppy);
 			ImageIO.write(newImg, "png", new File(resultPath, "atividade1.png"));
-		case 9:
+		
 			newImg = new Atividade1().toDithering(imgPuppy);
 			ImageIO.write(newImg, "png", new File(resultPath, "atividade1_d.png"));
+			break;
 		}
 	}
 
