@@ -1,0 +1,14 @@
+Roteiro para video de exercicios da aula 3 (Kernel e Morfologia)
+
+- criando um projeto no intelliJ
+- criando uma classe para executar os exercicios (Aula2)
+- pre definindo as matrizes de kernel
+	 - breve explicação sobre como declarar e popular matrizes em java (usando { {0, 1}, {2, 3} } )
+- criando metodo (static) para o covolve
+- lendo imagem do disco, e passando para o metodo covolve
+- executando a interacao de cada um dos pixeis e seus vizinhos
+	- breve demonstração do metodo que trata bordas com decaimento, e esplicar como seria feito com outros métodos, como por exemplo o reflexo e a dobra
+- aplicando o kernel desejado em cada um dos pixeis
+	- demonstrar como isso foi feito, pois quando eu estava montando o exercicio me deu um leve bug aqui
+
+Eu nao sei se deve ser feito um video sobre as conversoes de RGB e HSV.. Pq esse é o trabalho do segundo exercício.

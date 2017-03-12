@@ -1,0 +1,17 @@
+Roteiro para video de exercicios da aula 2 (processamento de imagens)
+
+- criando um projeto no intelliJ
+- criando uma classe para executar os exercicios (Aula2)
+- criando metodo (static) para o bright
+	- breve explicação sobre métodos estáticos
+- lendo imagem do disco, e passando para o metodo bright
+	- breve exemplo de como otimizar o carregamento de imagens do disco no java (criando variavel PATH)
+- executando a interacao de cada um dos pixeis e aplicando numa imagem nova
+	- breve explicação sobre como as cores são representadas na tela do computador
+- pegar imagem nova e salvar em disco
+
+- criando novo metodo para o exercicio de lerp
+- carregando duas imagens
+- mandando para o metodo e aplicando formula de lerp em cada pixel para uma imagem nova
+	- explicação sobre interpolação e exemplos de uso
+- salvando essa imagem nova em disco

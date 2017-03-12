@@ -1,4 +1,4 @@
-package br.pucpr.aula1;
+package br.pucpr.aula2;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -7,14 +7,14 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
-public class Aula1 {
+public class Aula2 {
 	
 	// Atenção, alterar esses caminhos ao trocar a maquina rodando esse código.
 	public static String path = "/Users/andredossantos/Documents/monitoria_prog3D_2017_1/img";
-	public static String resultPath = "/Users/andredossantos/Documents/monitoria_prog3D_2017_1/Aula1/result";
+	public static String resultPath = "/Users/andredossantos/Documents/monitoria_prog3D_2017_1/Aula2/result";
 	
 	public static void main(String[] args) throws IOException {
-		new Aula1().executar(8);
+		new Aula2().executar(8);
 	}
 	
 	/**

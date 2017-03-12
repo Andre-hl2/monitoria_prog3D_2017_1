@@ -1,4 +1,4 @@
-package br.pucpr.aula1;
+package br.pucpr.aula2;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -43,7 +43,7 @@ public class Exercicio5 {
 	}
 	
 	void setRGBf(BufferedImage img, int x, int y, float[] color) {
-		Color newColor = Aula1.saturate(
+		Color newColor = Aula2.saturate(
 					(int)(color[0] * 255),
 					(int)(color[1] * 255),
 					(int)(color[2] * 255)
@@ -52,7 +52,7 @@ public class Exercicio5 {
 	}
 	
 	void setRGBAf(BufferedImage img, int x, int y, float[] color) {
-		Color newColor = Aula1.saturate(
+		Color newColor = Aula2.saturate(
 					(int)(color[0] * 255),
 					(int)(color[1] * 255),
 					(int)(color[2] * 255), 

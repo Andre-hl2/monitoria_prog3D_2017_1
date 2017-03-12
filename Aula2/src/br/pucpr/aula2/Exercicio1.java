@@ -1,4 +1,4 @@
-package br.pucpr.aula1;
+package br.pucpr.aula2;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -30,6 +30,6 @@ public class Exercicio1 {
 		int g = (int)(color.getGreen() * intensity);
 		int b = (int)(color.getBlue() * intensity);
 		
-		return Aula1.saturate(r, g, b);
+		return Aula2.saturate(r, g, b);
 	}
 }

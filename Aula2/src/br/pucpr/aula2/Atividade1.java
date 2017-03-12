@@ -1,4 +1,4 @@
-package br.pucpr.aula1;
+package br.pucpr.aula2;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
@@ -76,7 +76,7 @@ public class Atividade1 {
 		
 		for(int i=0; i < pallete64.length; i++) {
 			Color palleteColor = new Color(pallete64[i]);
-			float distance = Aula1.distanceBetweenColors(color,palleteColor);
+			float distance = Aula2.distanceBetweenColors(color,palleteColor);
 			
 			if(distance < nearestDistance) {
 				nearestDistance = distance;
@@ -92,6 +92,6 @@ public class Atividade1 {
 		int g = (int)(color.getGreen() + error[1] * value);
 		int b = (int)(color.getBlue() + error[2] * value);
 		
-		return Aula1.saturate(r, g,  b);
+		return Aula2.saturate(r, g,  b);
 	}
 }
