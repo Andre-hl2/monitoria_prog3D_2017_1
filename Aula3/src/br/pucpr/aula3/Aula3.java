@@ -32,7 +32,7 @@ public class Aula3 {
 	};
 	
 	public static void main(String[] args) throws IOException {
-		new Aula3().executar(1);
+		new Aula3().executar(4);
 	}
 	
 	
@@ -40,60 +40,44 @@ public class Aula3 {
 	void executar(int exercicio) throws IOException {
 		
 		BufferedImage img = ImageIO.read(new File(path, "cor/turtle.jpg"));
+		BufferedImage bloomImg = ImageIO.read(new File(path, "cor/metroid2.jpg"));
 		
 		switch(exercicio) {
 		case 1:
-			BufferedImage newImg = convolve(img, mediaFilter);
+			BufferedImage newImg = new Exercicio1().convolve(img, mediaFilter);
 			ImageIO.write(newImg, "png", new File(resultPath, "exercicio1_media.png"));
 			
-			newImg = convolve(img, sharpSuavization);
+			newImg = new Exercicio1().convolve(img, sharpSuavization);
 			ImageIO.write(newImg, "png", new File(resultPath, "exercicio1_sharp.png"));
 			
-			newImg = convolve(img, crossSuavization);
+			newImg = new Exercicio1().convolve(img, crossSuavization);
 			ImageIO.write(newImg, "png", new File(resultPath, "exercicio1_cross.png"));
 			break;
 		case 2:
+			newImg = new Exercicio2().changeHSV(img, new float[] { 1.0f, 2.0f, 1.0f } );
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio2.png"));
+			
 			break;
 		case 3:
+			newImg = new Exercicio3().erode(img );
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio3_erode.png"));
+			
+			newImg = new Exercicio3().dilate(img );
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio3_dilate.png"));
+			
+			newImg = new Exercicio3().open(img, 3);
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio3_open.png"));
+			
+			newImg = new Exercicio3().close(img, 3);
+			ImageIO.write(newImg, "png", new File(resultPath, "exercicio3_close.png"));
+			
 			break;
 		case 4:
+			newImg = new Desafio2().bloom(bloomImg );
+			ImageIO.write(newImg, "png", new File(resultPath, "desafio2.png"));
+			
 			break;
 		}
-	}
-	
-	
-	BufferedImage convolve(BufferedImage img, float[][] kernel) {
-		
-		BufferedImage newImg = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_RGB);
-		
-		for(int y = 0; y < newImg.getHeight(); y++) {
-			for(int x = 0; x < newImg.getWidth(); x++) {
-				Color[][] colors = {
-						{getRGB(img, x-1, y-1), getRGB(img, x, y-1), getRGB(img, x+1, y-1)},
-						{getRGB(img, x-1, y), getRGB(img, x, y), getRGB(img, x+1, y)},
-						{getRGB(img, x-1, y+1), getRGB(img, x, y+1), getRGB(img, x+1, y+1)}
-				};
-				newImg.setRGB(x, y, convolveColor(colors, kernel).getRGB());
-			}
-		}
-		
-		return newImg;
-	}
-	
-	Color convolveColor(Color[][] colors, float[][] kernel) {
-		int r = 0;
-		int g = 0;
-		int b = 0;
-		
-		for(int i=0; i<colors.length; i++){
-			for(int j=0;j < colors[i].length; j++) {
-				r += colors[i][j].getRed() * kernel[i][j];
-				g += colors[i][j].getGreen() * kernel[i][j];
-				b += colors[i][j].getBlue() * kernel[i][j];
-			}
-		}
-		
-		return saturate(r, g, b);
 	}
 	
 	//Helper methods
